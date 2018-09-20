@@ -27,10 +27,10 @@ public class CorridaSapos {
 
         Scanner ler = new Scanner(System.in);
 
-        System.out.println("BEM VINDO À CORRIDA DE SAPOS DO COLTEC!!!");
+        System.out.println("\nBEM VINDO À CORRIDA DE SAPOS DO COLTEC!!!\n");
         System.out.println("Qual será a extensão total do trajeto?");
         dC = ler.nextFloat();
-        System.out.println("Quantos sapos estarão participando?");
+        System.out.println("\nQuantos sapos estarão participando?");
         nS = ler.nextInt();
 
         distanciaCorrida = dC;

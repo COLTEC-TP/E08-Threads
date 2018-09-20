@@ -28,15 +28,17 @@ public class Sapo extends Thread {
         for (int d=0;d<=distanciaCorrida;d++){
 
             try {
+                if(distanciaPercorrida >= distanciaCorrida) {
+                    System.out.println("\n\n -----Sapo "+sapoID+" VENCEU A CORRIDA!!!-----");
+                    System.exit(0);
+                }
+                
                 sleep(500);
 
                 distanciaPercorrida = distanciaPercorrida + distanciaPulo;
                 System.out.println("\n Sapo "+sapoID+" Percorreu:" + distanciaPercorrida);
 
-                if(distanciaPercorrida >= distanciaCorrida) {
-                    System.out.println("\n\n Sapo "+sapoID+" Venceu a corrida!!!");
-                    System.exit(0);
-                }
+                
             }catch (InterruptedException e){}
         }
     }
