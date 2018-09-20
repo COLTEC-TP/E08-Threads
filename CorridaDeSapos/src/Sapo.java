@@ -29,7 +29,7 @@ public class Sapo extends Thread {
 
             try {
                 if(distanciaPercorrida >= distanciaCorrida) {
-                    System.out.println("\n\n -----Sapo "+sapoID+" VENCEU A CORRIDA!!!-----");
+                    System.out.println("\n\n //-----// Sapo "+sapoID+" VENCEU A CORRIDA!!! //-----//");
                     System.exit(0);
                 }
                 
