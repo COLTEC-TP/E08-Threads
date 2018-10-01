@@ -12,6 +12,7 @@ public class Sapo extends Thread{
     public void run() {
         while(this.getDistanciaPercorrida() < 100) {
             this.setDistanciaPercorrida(getDistanciaPercorrida() + this.distanciaPulo);
+            System.out.println(this.id + " - " +  this.getDistanciaPercorrida());
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
