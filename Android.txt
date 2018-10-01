@@ -1,0 +1,4 @@
+A classe que auxilia o funcionamento de threads no Android é o AsyncTask.
+É uma classe que executa operações em background em thread sem a necessidade de o desenvolvedor manipular Threads ou Handlers.
+
+Para o funcionamento é necessário implementar 4 métodos: OnPreExecute(), normalmente para setar a tarefa a ser executada como váriaveis, inicialização; doInBackground, usada para executar a tarefa, ou seja, a lógica seria implementada nesse métodos; OnProgressUpdate, usada para, geralmente, mostrar o progresso da tarefa para o usuário; e por último, o OnPostExecute, chamada logo após do término da execução da tarefa.
