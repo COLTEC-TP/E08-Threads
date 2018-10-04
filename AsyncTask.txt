@@ -1,0 +1,14 @@
+O Android utiliza da classe AsyncTask, criada utilizando-se threads e handlers. Ela é vantajosa para o desenvolvedor,
+pois torna muito mais simples a implementação, eliminando a sequência de passos necessárias ao usar Threads.
+
+Sua forma genérica é AsyncTak<Parâmetros,Progresso,Resultado>, em que parâmetros é o tipo de dado que será recebido, progresso é o tipo de dado que mostrará
+o progresso na tela e resultado é o retorno da Thread para a Thread principal.
+
+4 Métodos podem ser sobrescritos, são eles:
+- onPreExecute()     : executado antes da Thread ser iniciada;
+- doInBackground()   : executado em Thread separada, onde fica o processamento pesado;
+- onPostExecute()    : executado após doInBackground;
+- onProgressUpdate() : responsável por exibir o percentual já concluido da Thread, é executado na mesma Thread da interface gráfica.
+
+Para iniciar uma AsyncTask, basta utilizar o método .execute(parâmetro)
+
