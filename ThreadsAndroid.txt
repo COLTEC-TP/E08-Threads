@@ -1,0 +1,19 @@
+Dentro da plataforma Android pode-se executar tarefas em paralelo utilizando as Threads, que permitem a criação de linhas de execução 
+a serem processadas em “paralelo".O uso dessa prática é bem simples,a classe AsyncTask foi criada para facilitar esse tipo de processamento em 
+background e atualizar os dados na Interface.
+
+AsyncTask
+A AsyncTask encapsula todo esse processo de criação de Threads e Handler.Para utilizá-la a classe deve ser criada estendida à 
+classe AsyncTask
+
+ * O método onPreExecute é executado sempre antes da Thread ser iniciada, e é onde são colocadas as mensagens a serem exibidas na tela para o
+  usuário.
+ * O método obrigatório doInBackground é o responsável por todo o processamento pesado, pois ele é executado em uma Thread separada.
+
+ * O método onPostExecute é o que recebe o retorno do doInBackground e é chamado utilizando um Handler. Sua execução se dá na mesma Thread 
+ que a interface gráfica.
+
+ * O método onProgressUpdate é o responsável por receber as informações para mostrar a porcentagem do download na tela para o usuário. 
+ Também é executado na mesma Thread que a interface gráfica.
+
+ Para iniciar a AsyncTask, utiliza-se o método .execute
