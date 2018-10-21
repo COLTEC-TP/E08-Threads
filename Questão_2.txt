@@ -1,0 +1,24 @@
+Afim de tornar mais simples a implementação de Threads, respeitando as regras de encademanto:
+    1. Não bloquear a thread da IU
+    2. Não acessar o kit de ferramentas de IU do Android fora da thread da IU
+o Android disponibiliza a classe abstrata AssyncTask. Ela realiza operações de bloqueio em uma thread separada e, em seguida, publica os resultados na thread da IU, sem que você precise lidar com os encadeamentos e/ou os gerenciadores.
+
+Exemplo de código: 
+
+public void onClick(View v) {
+    new DownloadImageTask().execute("http://example.com/image.png");
+}
+
+private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    /** O método doInBackground() executa as tarefas dadas em uma thread separada
+      * e consome os parametros dados ao método AsyncTask.execute() */
+    protected Bitmap doInBackground(String... urls) {
+        return loadImageFromNetwork(urls[0]);
+    }
+
+    /** O método onPostExecute() recebe os resultados de doInBackground()
+      * e executa as tarefas dadas na thread da UI */
+    protected void onPostExecute(Bitmap result) {
+        mImageView.setImageBitmap(result);
+    }
+}
